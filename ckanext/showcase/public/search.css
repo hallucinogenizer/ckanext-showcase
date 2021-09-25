@@ -1,0 +1,44 @@
+
+form.search-form > h1 {
+    font-size:30px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+ul.showcase-list {
+    list-style: none;
+    padding-left:0;
+}
+
+li.showcase-list-item > img {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 4rem;
+    height: auto;
+}
+
+
+
+div.showcase-item-text > h3 {
+    margin-top:0;
+}
+
+div.showcase-item-text > h3 > a {
+    color: var(--color-2) !important;
+    font-weight: bold !important;
+    font-size: 18px;
+    line-height: 1.3;   
+}
+
+#xk87 {
+    font-size:18px;
+}
+

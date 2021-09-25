@@ -1,0 +1,7 @@
+#div-wrapper::before {
+    border:0;
+}
+
+#div-wrapper {
+    padding-bottom:4rem!important;
+}

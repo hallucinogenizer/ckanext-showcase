@@ -1,8 +1,14 @@
-{% extends "package/search.html" %}
+{% extends "package/search2.html" %}
 {% import 'macros/form.html' as form %}
 {% set ckan_29_or_higher = h.ckan_version().split('.')[1] | int >= 9 %}
 {% set showcase_index_route = 'showcase_blueprint.index' if ckan_29_or_higher else 'showcase_index' %}
 {% set showcase_new_route = 'showcase_blueprint.new' if ckan_29_or_higher else 'showcase_new' %}
+
+{% block styles %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="/search.css">
+  <link rel="stylesheet" type="text/css" href="/example-theme-search.css">
+{% endblock %}
 
 
 {% block subtitle %}{{ _("Showcases") }}{% endblock %}
@@ -16,6 +22,14 @@
     <div class="page_primary_action">
       {% link_for _('Add Showcase'), named_route=showcase_new_route, class_='btn btn-primary', icon='plus-square' %}
     </div>
+  {% else %}
+    <div class="col-sm-10" id='xk87'>
+    Showcased Data Stories and Applications using Open Data Pakistan. 
+    </div>
+    <div class="col-sm-2"><a style="margin-bottom : 15px" class="btn btn-primary" href="/contact" target="_blank">
+      <i class="fa fa-slideshare"></i>
+      Share Data Story
+  </a></div>
   {% endif %}
 {% endblock %}
 
@@ -44,14 +58,4 @@
 {% block package_search_results_api %}
 {% endblock %}
 
-{% block secondary_content %}
-{{ h.snippet('showcase/snippets/helper.html') }}
-<div class="filters">
-  <div>
-    {% for facet in c.facet_titles %}
-      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
-    {% endfor %}
-  </div>
-  <a class="close no-text hide-filters"><i class="fa fa-times-circle icon-remove-sign"></i><span class="text">close</span></a>
-</div>
-{% endblock %}
+
